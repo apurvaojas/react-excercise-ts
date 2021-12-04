@@ -5,19 +5,32 @@ import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './store';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 
 import AppRedux from './components/AppRedux';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+      </Routes>
+  </BrowserRouter>,
   </React.StrictMode>,
   document.getElementById('root')
 );
 
 ReactDOM.render(
   <Provider store={store}>
-    <AppRedux/>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<AppRedux />} />
+      </Routes>
+  </BrowserRouter>,
   </Provider>,
   document.getElementById('root-redux')
 );
